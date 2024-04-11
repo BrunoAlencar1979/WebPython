@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administração do Cardápio</title>
+</head>
+<body>
+    <h1>Administração do Cardápio</h1>
+    <form action="/add" method="post" enctype="multipart/form-data">
+        Nome do Prato: <input type="text" name="nome_prato"><br>
+        Descrição: <input type="text" name="descricao"><br>
+        Imagem: <input type="file" name="imagem"><br>
+        <input type="submit" value="Adicionar Prato">
+    </form>
+    <ul>
+        {% for prato, descricao in cardapio.items() %}
+            <li>{{ prato }}: {{ descricao }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/logout">Sair</a>
+</body>
+</html>

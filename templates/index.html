@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cardápio</title>
+</head>
+<body>
+    <h1>Cardápio</h1>
+    <ul>
+        {% for prato, descricao in cardapio.items() %}
+            <li>{{ prato }}: {{ descricao }}</li>
+        {% endfor %}
+    </ul>
+    {% if is_admin %}
+        <a href="/admin">Administração do Cardápio</a>
+        <br>
+    {% endif %}
+    <a href="/logout">Sair</a>
+</body>
+</html>
